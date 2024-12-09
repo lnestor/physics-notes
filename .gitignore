@@ -1,0 +1,7 @@
+# Latex Temp Files
+*.aux
+*.log
+*.synctex.gz
+
+# Vim
+*.swp

@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{braket}
+\usepackage{graphicx,accents}
+
+\setlength{\parskip}{\baselineskip}
+
+\newcommand{\Tr}[1]{\text{Tr}[#1]}
+\renewcommand{\exp}[1]{e^{#1}}
+
+\newcommand{\aside}[2]{#1}
+\newcommand{\link}[2]{#1}
+\newcommand{\todo}[1]{(#1)}
+
+\begin{document}
+ 
+\title{$SU(3)$ Introduction}
+\author{}
+\date{}
+
+\maketitle
+
+\section{Introduction}
+By definition, $SU(3)=\{U|U^\dagger U = \mathbb{1},\det{U}=1\}$, where $U$ are 3x3 matrices. We can write the group elements $U$ in the form $U=\exp{-i \theta_j T_j}$, where $T_j$ are called the generators of the group. Each of the above restriction on the group imposes a condition on these generators. The \aside{special}{Special means that $\det{U}=1$} property requires that the \aside{generators have a zero trace}{Proof}. The \aside{unitarity}{Unitary means $U^\dagger U=\mathbb{1}$} property requires that the \aside{generators are Hermitian}{Proof}. There are \aside{8 linearly independent Hermitian, traceless matrices}{Discussion on degrees of freedom and why there are 8} that satisfy these conditions. They are given as the Gell-Mann matrices.
+\begin{equation}
+\end{equation}
+
+These matrices are orthogonal because they are linearly independent, but we need a definition for what orthogonal means. For example, for normal vectors $\vec{v}$ and $\vec{u}$, we say that they are orthogonal if their dot product $\vec{v}\cdot\vec{u}=0$. For these matrices, we will define the analog of the dot product as the trace of pairwise products $\Tr{\lambda_i\lambda_j}=2\delta_{ij}$. The $\delta_{ij}$ shows that they are orthogonal, though the factor of $2$ shows that they are not normalized in the normal sense that we expect elements to be normalized to $1$. However, we have the freedom to normalize things to whatever we want, and having to carry around an extra factor of $\frac{1}{\sqrt{2}}$ is inconvienient enough that this is the preferred way.
+
+However, with all that being said, there is a more common basis for the generators than the Gell-Mann matrices. We will define these as $T_i\equiv \frac{\lambda_i}{2}$. These new generators are normalized to a value of $\frac{1}{2}$, meaning $\Tr{T_i T_j}=\frac{1}{2}\delta_{ij}$. This is analogous to how the spin-$\frac{1}{2}$ operators are defined as $S_i=\frac{1}{2}\sigma_i$.
+
+Before we move on, I want you to notice a few things about the Gell-Mann matrices. First, $\lambda_1$, $\lambda_2$, and $\lambda_3$ all have the Pauli matrices in the upper-left hand corner. Secondly, $\lambda_4$ and $\lambda_5$ look similar to $\sigma_1$ and $\sigma_2$ as if the matrices were spread between rows/columns 1 and 3. Similarly, $\lambda_6$ and $\lambda_7$ are similar with the $\sigma_1$ and $\sigma_2$ split between rows and columns 2 and 3. Lastly, the only two diagonal matrices are $\lambda_3$ and $\lambda_8$. 
+
+\section{Eigenstates}
+As mentioned in the \link{motivations for $SU(3)$}{Link}, we are seeking to describe an isospin symmetry (and potentially others) between all the new particles found during the particle zoo era. Thus it makes sense to search for eigenstates describing this system. If our system exhibits $SU(3)$ symmetry, then its Hilbert space will be described by the vector space of irreducible representations of $SU(3)$. So we seek to find a set of basis states for the irreducible representations of $SU(3)$.
+
+For now, we will focus on the fundamental representation of $SU(3)$, meaning the \aside{3-dimensional representation}{Somewhat confusingly, $SU(3)$, while being a group of 3x3 matrices, can have representations that are described by matrices larger than 3x3. This is similar to how the $SU(2)$ group describing particle spin can have 2 dimensions (spin-\frac{1}{2}), 3-dimensions (spin-1), etc.}. Like we said earlier, there are 2 diagonal Gell-Mann matrices: $\lambda_3$ and $\lambda_8$. It seems natural that we take the eigenstates of these to be the eigenstates of the system. However, we will make one small adjustment. We will define the hypercharge operator to be $Y\equiv\frac{2}{\sqrt{3}}T_8$.
+\begin{equation}
+Y=\frac{1}{3}
+\end{equation}
+
+Thus, our eigenstates can be labelled by eigenvalues of these two matrices, which we shall call $t_3$ and $y$, making our states $\ket{t_3,y}$. However, we have 3 additional operators that form a complete set of commutating operators. The first 2 are 2 Casimir operators, which by definition commute with every generator. They are not important, but shown below just for interest. \todo{Describe cubic Casimir}
+\begin{equation}
+    C_1=\sum_{i=1}^8 T_i^2
+\end{equation}
+\begin{equation}
+    C_2=\sum_{ijk}d_{ijk}F_i F_j F_k
+\end{equation}
+
+The last commuting operator is $T_1^2+T_2^2+T_3^2$. It may be a bit surprising that this shows up in addition to the Casimir operator $C_1$. However, remember that $\lambda_1$, $\lambda_2$, and $\lambda_3$ form an $SU(2)$ subgroup. When you studied spin, you labelled eigenstates by eigenvalues of the angular momentum operators $J^2$ and $J_z$. It is the same concept here: we are using $T_3$ to label the eigenstates, so we also need the analog of $J^2$.
+
+This gives us a form for our fulling classified and unique eigenstates. Here I have abused notation for the last 3 elements by labelling the eigenvalues the same as what I labelled the operators.
+\begin{equation}
+    \ket{t_3, y, I^2, C_1, C_2}
+\end{equation}
+
+Now that we have gone through the work of finding the fully qualified eigenstates, we are going to throw away most of it and just label our eigenstates by $t_3$ and $y$. The reason to ignore the Casimirs is because they commute with every generator and so will have the same value for all states in a given represnetation. Their \aside{eigenvalues will vary between representations}{Why do casimirs have different values for differen representations}, but we will be clear when talking about which specific representation we will be using. 
+
+We will ignore the $I^2$ eigenvalue for a similar reason. If we were looking at $SU(2)$, $I^2$ would be a Casimir and could be ignored for the reasons above. The different representations could be fully determined by the maximum value of $t_3$. We will continue to use the maximum \aside{weight}{What is weight} analysis here, making $I^2$ unecessary.
+
+I think perhaps make all the discussion above an aside and keep the happy path the most important stuff, i.e. talking about the (1,0,0), (0,1,0) etc quark states and their eigenvalues.
+
+\section{Fundamental Representation}
+
+\section{Conjugate Representation}
+
+\end{document}

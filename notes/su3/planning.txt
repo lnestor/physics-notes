@@ -1,0 +1,39 @@
+This file serves as a way to gather all the information I want to convey and how to organize it.
+
+Topics
+- Gell-Mann matrices
+- Fundamental and conjugate representation
+- Labelling respresentations as (n,m)
+    - tensoring n copies of 3-dim representation with m copies of conjugate representaiton
+- Three dimension vector space with (1,0,0) being up quark, (0,1,0) begin down, (0,0,1) being strange
+    - Approximate flavor symmetry and what that means
+    - Flavor rotation
+- Casimirs labelling the different irreps
+- Complete set of commuting operators for the uncoupled and coupled basis
+- Tensor product notation w/ up and down indices
+- Hexagon Plots being plotted vs Y and vs S and what the diagonals represent in those plots
+    - Anti-particle pairs being at opposite ends
+- SU(2) subgroups and forming ladder operators to find fundamental and conjugate respresentations
+- "Standard basis" being what we called the T generators rather than the Gell-Mann matrices themselves and why we use those
+- Weight states and what weight generally means
+- Tensor products add as vectors in weight space
+- Hexagon plots being motivation for using SU(3)
+- Action of each ladder operator in the hexagon plots (weight plot?)
+- Why middle state isn't unique
+- Why we don't get infinite number of states (i.e. ladder operators give 0 at some point)
+- Electric charge from hypercharge
+
+Resources
+- Georgi
+
+SU(3)-1: Motivation
+- Motivation, hexagon plot introductions
+
+SU(3)-2: Fundamental Representation
+- Definition, Gell-Mann matrices, "standard basis"
+- CSCO, casimirs, highest weight, quark states and eigenvalues
+- Fundamental representation, SU(2) subgroups, ladder operators and action on hexagon plots, middle state isn't unique
+- Conjugate representation
+
+SU(3)-3: Tensor Methods
+- Tensor products, (n,m)
